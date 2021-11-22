@@ -1,0 +1,40 @@
+<div class="my-1">
+  <div class="card">
+    <div id="headerColor" class="card-header text-white">
+      <h6>All Files</h6>
+    </div>
+    <div class="card-body">
+
+      <div class="card">
+        <div class="card-header">
+          <h6> Employees </h6>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let data of employeeData; let i=index">
+              <td>{{i+1}}</td>
+              <td>{{data.empName}}</td>
+              <td>{{data.empFile.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-header">
+          <h6> Departments </h6>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let data of departmentData; let i=index">
+              <td>{{i+1}}</td>
+              <td>{{data.dptName}}</td>
+              <td>{{data.dptFile}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

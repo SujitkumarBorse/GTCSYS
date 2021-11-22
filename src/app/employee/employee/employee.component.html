@@ -1,0 +1,61 @@
+<div class="page-area my-1">
+    <div class="text-center my-3">
+        <h5>Employee Form</h5>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-7 px-0">
+            <p *ngIf="showMsg" class="alert alert-success p-2" role="alert">
+                <strong>Employee Data save Successfully!</strong>
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-left bg-white rounded shadow py-3 ">
+            <form [formGroup]="empForm" (ngSubmit)="submit()">
+
+                <div class="form-group mb-2">
+                    <label for="empName">Employee Name</label>
+                    <input formControlName="empName" id="empName" type="text" class="form-control">
+                    <div *ngIf="f.empName.touched && f.empName.invalid" class="text-danger">
+                        <small *ngIf="f.empName.errors && f.empName.errors.required">Employee Name is required.</small>
+                        <small *ngIf="f.empName.errors && f.empName.errors.minlength">Name should be 5
+                            character.</small>
+                        <small *ngIf="f.empName.errors && f.empName.errors.maxlength">Name should be 20
+                            character.</small>
+                    </div>
+                    <!-- <small *ngIf="!form.get('empName').valid && form.get('empName').touched" class="text-danger"> Employee Name is required. </small> -->
+                </div>
+                <div class="form-group mb-2">
+                    <label for="empCode">Employee code</label>
+                    <input formControlName="empCode" id="empCode" type="text" class="form-control">
+                    <div *ngIf="f.empCode.touched && f.empCode.invalid" class="text-danger">
+                        <small *ngIf="f.empCode.errors && f.empCode.errors.required">Employee Code is required.</small>
+                        <small *ngIf="f.empCode.errors && f.empCode.errors.minlength">Employee Code should be 6
+                            character.</small>
+                        <small *ngIf="f.empCode.errors && f.empCode.errors.maxlength">Employee Code should be 6
+                            character.</small>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="empFile">Upload File</label>
+                    <input type="file" id="empFile" class="form-control" (change)="uploadFile($event)">
+                    <div *ngIf="f.empFile.touched && f.empFile.invalid" class="text-danger">
+                        <small *ngIf="f.empFile.errors && f.empFile.errors.required">File is required.</small>
+                    </div>
+                    <br>
+                    <!-- Progress Bar -->
+                    <div class="progress form-group" *ngIf="progress > 0">
+                        <div class="progress-bar bg-success" role="progressbar"
+                            [style.width.%]="progress">{{progress}}
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn btn-success my-2" [disabled]="!empForm.valid"><span
+                        class="px-3">Save</span></button>
+
+            </form>
+        </div>
+    </div>
+</div>

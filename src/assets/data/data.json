@@ -1,0 +1,46 @@
+{
+    "employeeData": [
+        {
+            "empName": "sujit",
+            "empCode": "sadsada",
+            "fileUploadStatus": "true"
+        },
+        {
+            "empName": "amol",
+            "empCode": "sadsada",
+            "fileUploadStatus": "false"
+        },
+        {
+            "empName": "Prashant",
+            "empCode": "sadsada",
+            "fileUploadStatus": "true"
+        },
+        {
+            "empName": "akash",
+            "empCode": "sadsada",
+            "fileUploadStatus": "true"
+        }
+    ],
+    "departmentData": [
+        {
+            "empName": "sujit",
+            "empCode": "sadsada",
+            "fileUploadStatus": "false"
+        },
+        {
+            "empName": "amol",
+            "empCode": "sadsada",
+            "fileUploadStatus": "true"
+        },
+        {
+            "empName": "Prashant",
+            "empCode": "sadsada",
+            "fileUploadStatus": "false"
+        },
+        {
+            "empName": "Prakash",
+            "empCode": "sadsada",
+            "fileUploadStatus": "true"
+        }
+    ]
+}

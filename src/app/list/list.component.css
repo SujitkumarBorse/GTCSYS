@@ -1,0 +1,17 @@
+
+.card-body{
+    border: 1px solid rgba(10, 9, 9, 0.325) !important;
+
+    background-color: #e4e9ed;
+    height: 503px;
+    overflow: auto;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-style: none !important;
+}
+
+#headerColor{
+    background-color: gray;
+}
+

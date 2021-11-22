@@ -1,0 +1,49 @@
+<div class="page-area my-1">
+    <div class="text-center my-3">
+        <h5>Department Form</h5>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-7 px-0">
+            <p *ngIf="showMsg" class="alert alert-success p-2" role="alert">
+                <strong>Department Data save Successfully!</strong>
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-left bg-white rounded shadow py-3 ">
+            <form [formGroup]="form" (ngSubmit)="submit()">
+
+                <div class="form-group mb-2">
+                    <label for="dptName">Department Name</label>
+                    <input formControlName="dptName" id="dptName" type="text" class="form-control">
+                    <div *ngIf="f.dptName.touched && f.dptName.invalid" class="text-danger">
+                        <small *ngIf="f.dptName.errors && f.dptName.errors.required">Department Name is required.</small>
+                        <small *ngIf="f.dptName.errors && f.dptName.errors.minlength">Name should be 5
+                            character.</small>
+                        <small *ngIf="f.dptName.errors && f.dptName.errors.maxlength">Name should be 20
+                            character.</small>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="dptCode">Department code</label>
+                    <input formControlName="dptCode" id="dptCode" type="text" class="form-control">
+                    <div *ngIf="f.dptCode.touched && f.dptCode.invalid" class="text-danger">
+                        <small *ngIf="f.dptCode.errors && f.dptCode.errors.required">Department Code is required.</small>
+                        <small *ngIf="f.dptCode.errors && f.dptCode.errors.minlength">Department Code should be 6
+                            character.</small>
+                        <small *ngIf="f.dptCode.errors && f.dptCode.errors.maxlength">Department Code should be 6
+                            character.</small>
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="dptFile">Upload File</label>
+                    <input formControlName="dptFile" type="file" id="dptFile" class="form-control">
+                    <div *ngIf="f.dptFile.touched && f.dptFile.invalid" class="text-danger">
+                        <small *ngIf="f.dptFile.errors && f.dptFile.errors.required">File is required.</small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success my-2" [disabled]="!form.valid"><span class="px-4">Save</span></button>
+            </form>
+        </div>
+    </div>
+</div>
